@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:APITool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="700" Width="800">
+    <Grid Margin="10">
+
+        <StackPanel>
+
+            <TextBlock Text="URL:" Margin="0,0,0,5"/>
+            <TextBox Name="UrlTextBox" Height="30" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Method:" Margin="0,0,0,5"/>
+            <ComboBox Name="MethodComboBox"
+                Height="30"
+                Margin="0,0,0,10"
+                SelectedIndex="0"
+                SelectionChanged="MethodComboBox_SelectionChanged">
+            <ComboBoxItem Content="GET"/>
+            <ComboBoxItem Content="POST"/>
+            </ComboBox> 
+
+            <TextBlock Text="Request Body:" Margin="0,0,0,5"/>
+            <TextBox Name="RequestBodyTextBox"
+                     Height="150"
+                     Margin="0,0,0,10"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"/>
+
+            <Button Content="Send" Height="30" Click="SendButton_Click"/>
+
+            <TextBlock Text="Status:" Margin="0,10,0,5"/>
+            <TextBox Name="StatusTextBox" Height="30" IsReadOnly="True"/>
+
+            <TextBlock Text="Response:" Margin="0,10,0,5"/>
+            <TextBox Name="ResponseTextBox" Height="200"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"
+                     IsReadOnly="True"/>
+
+        </StackPanel>
+
     </Grid>
 </Window>
